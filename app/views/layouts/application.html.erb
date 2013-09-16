@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MsTestingapp</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<%if current_user%>
+	<div>
+		<%="Welcom to #{current_user.email} for good shoping experience"%>
+		<%=link_to "logout","/users/sign_out",:method=>"delete"%>
+	</div>
+	<%end%>
+
+<%= yield %>
+
+</body>
+</html>

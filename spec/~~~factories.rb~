@@ -1,0 +1,38 @@
+require 'factory_girl'
+#require 'faker'
+
+FactoryGirl.define do
+
+  factory :user do
+    email 'hbdev123@gmail.com'
+
+    password 'hbdev123'
+    password_confirmation 'hbdev123'
+  end
+  
+  factory :category do |c1|
+    c1.name "sports"
+    c1.description "..."
+  end
+ 
+end
+
+  # factory :wine do    
+  #   name 'HBOne'
+  #   story 'Its a story only'    
+  #   vintage 'Cool'                
+  #   region 'Ahmedabad'    
+  #   wine_type_id 1
+  # end  
+
+  # factory :wine_type do    
+  #   name 'New wine type1'    
+  # end  
+
+  # Factory.define :confirmed_user, :parent => :user do |f|
+  #   f.after_create { |user| user.confirm! }
+  # end
+
+
+
+

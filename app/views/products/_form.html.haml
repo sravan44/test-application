@@ -1,0 +1,28 @@
+= form_for @product do |f|
+  - if @product.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@product.errors.count, "error")} prohibited this product from being saved:"
+      %ul
+        - @product.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    =f.label :category_id
+    =f.select :category_id , options_for_select(Category.all.map{|x| [x.name,x.id]})
+  .field
+    = f.label :description
+    = f.text_field :description
+  .field
+    = f.label :price
+    = f.number_field :price
+  .field
+    = f.label :no_of_items
+    = f.number_field :no_of_items
+  .field
+    =f.label :product_img
+    =f.file_field :product_img
+  .actions
+    = f.submit 'Save'
